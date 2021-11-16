@@ -21,11 +21,8 @@ public class Team {
     @Column
     private String name;
 
-    @ManyToMany(mappedBy = "team")
-    private User jugador1;
-
-    @ManyToMany(mappedBy = "team")
-    private User jugador2;
+    @OneToMany(mappedBy = "team")
+    private List<User> users;
 
     @ManyToMany
     @JoinColumn(name = "match_id")

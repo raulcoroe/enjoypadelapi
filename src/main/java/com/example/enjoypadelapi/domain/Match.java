@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -33,10 +34,7 @@ public class Match {
     private String matchScore;
 
     @ManyToMany(mappedBy = "matches")
-    private Team team1;
-
-    @ManyToMany(mappedBy = "matches")
-    private Team team2;
+    private List<Team> teams;
 
 }
 

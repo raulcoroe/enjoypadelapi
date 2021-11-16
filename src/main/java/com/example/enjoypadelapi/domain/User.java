@@ -27,7 +27,7 @@ public class User {
     @Column(name = "birth_date")
     private LocalDate birthDate;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "team_id")
     @JsonBackReference
     private Team team;
