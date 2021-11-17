@@ -1,6 +1,7 @@
 package com.example.enjoypadelapi.service;
 
 import com.example.enjoypadelapi.domain.Match;
+import com.example.enjoypadelapi.exception.MatchNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.List;
 @Service
 public interface MatchService {
     List<Match> findAll();
-    Match findById();
+    Match findById(long id) throws MatchNotFoundException;
     Match addMatch(Match newMatch);
     Match deleteMatch(long id);
     Match modifyMatch(long id, Match newMatch);

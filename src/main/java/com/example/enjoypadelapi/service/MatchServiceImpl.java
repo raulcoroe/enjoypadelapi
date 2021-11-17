@@ -1,6 +1,7 @@
 package com.example.enjoypadelapi.service;
 
 import com.example.enjoypadelapi.domain.Match;
+import com.example.enjoypadelapi.exception.MatchNotFoundException;
 import com.example.enjoypadelapi.repository.MatchRepository;
 import com.example.enjoypadelapi.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,17 +18,21 @@ public class MatchServiceImpl implements  MatchService{
 
     @Override
     public List<Match> findAll() {
-        return null;
+        List<Match> matches = matchRepository.findAll();
+        return matches;
     }
 
     @Override
-    public Match findById() {
-        return null;
+    public Match findById(long id) throws MatchNotFoundException {
+        Match match = matchRepository.findById(id)
+                .orElseThrow(()-> new MatchNotFoundException());
+        return match;
     }
 
     @Override
     public Match addMatch(Match newMatch) {
-        return null;
+        Match match = matchRepository.save(newMatch);
+        return match;
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.example.enjoypadelapi.service;
 
 import com.example.enjoypadelapi.domain.User;
+import com.example.enjoypadelapi.exception.UserNotFoundException;
 import com.example.enjoypadelapi.repository.TeamRepository;
 import com.example.enjoypadelapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,17 +18,21 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public List<User> findAll() {
-        return null;
+        List<User> users = userRepository.findAll();
+        return users;
     }
 
     @Override
-    public User findById(long id) {
-        return null;
+    public User findById(long id) throws UserNotFoundException {
+        User user = userRepository.findById(id)
+                .orElseThrow(()-> new UserNotFoundException());
+        return user;
     }
 
     @Override
     public User addUser(User newUser) {
-        return null;
+        User user = userRepository.save(newUser);
+        return user;
     }
 
     @Override
