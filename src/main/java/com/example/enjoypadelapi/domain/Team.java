@@ -25,7 +25,6 @@ public class Team {
     private List<User> users;
 
     @ManyToMany
-    @JoinColumn(name = "match_id")
     @JsonBackReference
     private List<Match> matches;
 }
