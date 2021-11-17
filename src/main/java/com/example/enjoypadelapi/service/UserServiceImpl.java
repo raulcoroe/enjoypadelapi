@@ -5,10 +5,12 @@ import com.example.enjoypadelapi.exception.UserNotFoundException;
 import com.example.enjoypadelapi.repository.TeamRepository;
 import com.example.enjoypadelapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.print.attribute.UnmodifiableSetException;
 import java.util.List;
 
+@Service
 public class UserServiceImpl implements UserService{
 
     @Autowired

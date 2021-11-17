@@ -6,10 +6,11 @@ import com.example.enjoypadelapi.repository.MatchRepository;
 import com.example.enjoypadelapi.repository.TeamRepository;
 import com.example.enjoypadelapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.nio.file.FileSystemAlreadyExistsException;
 import java.util.List;
-
+@Service
 public class TeamServiceImpl implements TeamService {
 
     @Autowired

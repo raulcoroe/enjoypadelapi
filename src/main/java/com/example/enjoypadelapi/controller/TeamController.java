@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RestController
 public class TeamController {
 
     @Autowired
@@ -34,7 +34,7 @@ public class TeamController {
     }
 
     @DeleteMapping("/team/{id}")
-    Team deleteTeam(@PathVariable long id){
+    Team deleteTeam(@PathVariable long id) throws TeamNotFoundException {
         Team team = teamService.deleteTeam(id);
         return team;
     }

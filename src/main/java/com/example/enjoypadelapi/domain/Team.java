@@ -20,13 +20,4 @@ public class Team {
     private long id;
     @Column
     private String name;
-
-    @ManyToMany
-    @JoinColumn(name = "jugadores")
-    private List<User> jugadores;
-
-
-    @ManyToMany
-    @JsonBackReference
-    private List<Match> matches;
 }

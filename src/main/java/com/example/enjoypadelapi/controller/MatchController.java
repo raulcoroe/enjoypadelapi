@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RestController
 public class MatchController {
 
     @Autowired
@@ -35,7 +35,7 @@ public class MatchController {
     }
 
     @DeleteMapping("/match/{id}")
-    Match deleteMatch(@PathVariable long id){
+    Match deleteMatch(@PathVariable long id) throws MatchNotFoundException {
         Match match = matchService.deleteMatch(id);
         return match;
     }

@@ -5,9 +5,11 @@ import com.example.enjoypadelapi.exception.MatchNotFoundException;
 import com.example.enjoypadelapi.repository.MatchRepository;
 import com.example.enjoypadelapi.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MatchServiceImpl implements  MatchService{
 
     @Autowired

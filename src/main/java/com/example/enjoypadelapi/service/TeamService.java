@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface TeamService {
     List<Team> findAll();
     Team findById(long id) throws TeamNotFoundException;

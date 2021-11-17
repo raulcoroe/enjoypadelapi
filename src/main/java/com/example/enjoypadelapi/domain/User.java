@@ -1,6 +1,7 @@
 package com.example.enjoypadelapi.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,9 +26,7 @@ public class User {
     @Column(name = "user_score")
     private long userScore;
     @Column(name = "birth_date")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate birthDate;
 
-    @ManyToMany (mappedBy = "jugadores")
-    @JsonBackReference
-    private List<Team> teams;
 }
