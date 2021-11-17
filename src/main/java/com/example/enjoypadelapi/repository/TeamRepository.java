@@ -1,11 +1,11 @@
 package com.example.enjoypadelapi.repository;
 
-import com.example.enjoypadelapi.domain.User;
+import com.example.enjoypadelapi.domain.Team;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface UserRepository {
-    List<User> findAll();
+public interface TeamRepository {
+    List<Team> findAll();
 }
