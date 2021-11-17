@@ -6,10 +6,7 @@ import com.example.enjoypadelapi.exception.TeamNotFoundException;
 import com.example.enjoypadelapi.exception.UserNotFoundException;
 import com.example.enjoypadelapi.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,7 +21,7 @@ public class TeamController {
         return teams;
     }
 
-    @GetMapping("/team/{id")
+    @GetMapping("/team/{id}")
     Team findById (@PathVariable long id) throws TeamNotFoundException {
         Team team = teamService.findById(id);
         return team;
@@ -33,6 +30,12 @@ public class TeamController {
     @PostMapping("/teams")
     Team addTeam(@RequestBody Team newTeam){
         Team team = teamService.addTeam(newTeam);
+        return team;
+    }
+
+    @DeleteMapping("/team/{id}")
+    Team deleteTeam(@PathVariable long id){
+        Team team = teamService.deleteTeam(id);
         return team;
     }
 }

@@ -6,6 +6,7 @@ import com.example.enjoypadelapi.repository.TeamRepository;
 import com.example.enjoypadelapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.print.attribute.UnmodifiableSetException;
 import java.util.List;
 
 public class UserServiceImpl implements UserService{
@@ -36,8 +37,11 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User deleteUser(long id) {
-        return null;
+    public User deleteUser(long id) throws UserNotFoundException {
+        User user = userRepository.findById(id)
+                .orElseThrow(()-> new UserNotFoundException());
+        userRepository.delete(user);
+        return user;
     }
 
     @Override

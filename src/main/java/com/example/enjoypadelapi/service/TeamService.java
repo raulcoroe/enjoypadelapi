@@ -11,6 +11,6 @@ public interface TeamService {
     List<Team> findAll();
     Team findById(long id) throws TeamNotFoundException;
     Team addTeam(Team newTeam);
-    Team deleteTeam(long id);
+    Team deleteTeam(long id) throws TeamNotFoundException;
     Team modifyTeam(long id, Team newTeam);
 }

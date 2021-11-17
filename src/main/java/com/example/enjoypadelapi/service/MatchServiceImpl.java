@@ -36,8 +36,11 @@ public class MatchServiceImpl implements  MatchService{
     }
 
     @Override
-    public Match deleteMatch(long id) {
-        return null;
+    public Match deleteMatch(long id) throws MatchNotFoundException {
+        Match match = matchRepository.findById(id)
+                .orElseThrow(()-> new MatchNotFoundException());
+        matchRepository.delete(match);
+        return match;
     }
 
     @Override

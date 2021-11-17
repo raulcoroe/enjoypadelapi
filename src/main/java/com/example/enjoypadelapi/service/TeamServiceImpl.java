@@ -7,6 +7,7 @@ import com.example.enjoypadelapi.repository.TeamRepository;
 import com.example.enjoypadelapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.nio.file.FileSystemAlreadyExistsException;
 import java.util.List;
 
 public class TeamServiceImpl implements TeamService {
@@ -39,8 +40,11 @@ public class TeamServiceImpl implements TeamService {
     }
 
     @Override
-    public Team deleteTeam(long id) {
-        return null;
+    public Team deleteTeam(long id) throws TeamNotFoundException {
+        Team team = teamRepository.findById(id)
+                .orElseThrow(()-> new TeamNotFoundException());
+        teamRepository.delete(team);
+        return team;
     }
 
     @Override

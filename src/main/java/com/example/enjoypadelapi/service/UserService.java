@@ -13,6 +13,6 @@ public interface UserService {
     List<User> findAll();
     User findById(long id) throws UserNotFoundException;
     User addUser(User newUser);
-    User deleteUser(long id);
+    User deleteUser(long id) throws UserNotFoundException;
     User modififyUser(long id, User newUser);
 }

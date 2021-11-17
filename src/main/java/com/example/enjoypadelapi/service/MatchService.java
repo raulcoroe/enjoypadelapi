@@ -11,6 +11,6 @@ public interface MatchService {
     List<Match> findAll();
     Match findById(long id) throws MatchNotFoundException;
     Match addMatch(Match newMatch);
-    Match deleteMatch(long id);
+    Match deleteMatch(long id) throws MatchNotFoundException;
     Match modifyMatch(long id, Match newMatch);
 }
