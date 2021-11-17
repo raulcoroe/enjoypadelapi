@@ -21,8 +21,10 @@ public class Team {
     @Column
     private String name;
 
-    @OneToMany(mappedBy = "team")
-    private List<User> users;
+    @ManyToMany
+    @JoinColumn(name = "jugadores")
+    private List<User> jugadores;
+
 
     @ManyToMany
     @JsonBackReference
