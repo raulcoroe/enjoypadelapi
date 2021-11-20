@@ -20,4 +20,16 @@ public class Team {
     private long id;
     @Column
     private String name;
+
+    @ManyToMany(mappedBy = "teams")
+    private List<User> users;
+
+    @JoinTable(
+            name = "rel_teams_matches",
+            joinColumns = @JoinColumn(name = "team_id"),
+            inverseJoinColumns = @JoinColumn(name = "match_id")
+    )
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JsonBackReference
+    private List<Match> matches;
 }

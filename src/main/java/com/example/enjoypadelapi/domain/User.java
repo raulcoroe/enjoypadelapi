@@ -29,4 +29,13 @@ public class User {
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate birthDate;
 
+    @JoinTable(
+            name = "rel_users_teams",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "team_id")
+    )
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JsonBackReference
+    private List<Team> teams;
+
 }

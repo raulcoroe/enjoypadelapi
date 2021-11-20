@@ -1,6 +1,7 @@
 package com.example.enjoypadelapi.service;
 
 import com.example.enjoypadelapi.domain.Team;
+import com.example.enjoypadelapi.domain.User;
 import com.example.enjoypadelapi.exception.TeamNotFoundException;
 import com.example.enjoypadelapi.repository.MatchRepository;
 import com.example.enjoypadelapi.repository.TeamRepository;
@@ -51,5 +52,13 @@ public class TeamServiceImpl implements TeamService {
     @Override
     public Team modifyTeam(long id, Team newTeam) {
         return null;
+    }
+
+    @Override
+    public List<User> findTeamUsers(long id) throws TeamNotFoundException {
+        Team team = teamRepository.findById(id)
+                .orElseThrow(()-> new TeamNotFoundException());
+        List<User> users = team.getUsers();
+        return users;
     }
 }

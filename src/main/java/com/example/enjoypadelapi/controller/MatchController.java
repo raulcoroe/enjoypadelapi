@@ -17,25 +17,25 @@ public class MatchController {
     MatchService matchService;
 
     @GetMapping("/matches")
-    List<Match> findAll() {
+    public List<Match> findAll() {
         List<Match> matches = matchService.findAll();
         return matches;
     }
 
     @GetMapping("/match/{id}")
-    Match findById (@PathVariable long id) throws MatchNotFoundException {
+    public Match findById (@PathVariable long id) throws MatchNotFoundException {
         Match match = matchService.findById(id);
         return match;
     }
 
     @PostMapping("/matches")
-    Match addTeam(@RequestBody Match newMatch){
+    public Match addTeam(@RequestBody Match newMatch){
         Match match = matchService.addMatch(newMatch);
         return match;
     }
 
     @DeleteMapping("/match/{id}")
-    Match deleteMatch(@PathVariable long id) throws MatchNotFoundException {
+    public Match deleteMatch(@PathVariable long id) throws MatchNotFoundException {
         Match match = matchService.deleteMatch(id);
         return match;
     }

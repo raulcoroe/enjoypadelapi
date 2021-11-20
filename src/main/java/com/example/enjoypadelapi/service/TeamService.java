@@ -1,6 +1,7 @@
 package com.example.enjoypadelapi.service;
 
 import com.example.enjoypadelapi.domain.Team;
+import com.example.enjoypadelapi.domain.User;
 import com.example.enjoypadelapi.exception.TeamNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -12,4 +13,6 @@ public interface TeamService {
     Team addTeam(Team newTeam);
     Team deleteTeam(long id) throws TeamNotFoundException;
     Team modifyTeam(long id, Team newTeam);
+
+    List<User> findTeamUsers(long id) throws TeamNotFoundException;
 }

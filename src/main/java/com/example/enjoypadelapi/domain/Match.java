@@ -33,5 +33,8 @@ public class Match {
     @Column(name = "match_score")
     private String matchScore;
 
+    @ManyToMany(mappedBy = "matches")
+    private List<Team> teams;
+
 }
 
