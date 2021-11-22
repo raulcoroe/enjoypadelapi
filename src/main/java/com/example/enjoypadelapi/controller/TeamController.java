@@ -75,7 +75,7 @@ public class TeamController {
     }
 
     @GetMapping("/team/{id}/matches")
-    public List<Match> listTeamMatches (@PathVariable long id) {
+    public List<Match> listTeamMatches (@PathVariable long id) throws TeamNotFoundException {
         List<Match> matches = teamService.listTeamMatches(id);
         return matches;
     }
