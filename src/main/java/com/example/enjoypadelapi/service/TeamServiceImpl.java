@@ -5,6 +5,7 @@ import com.example.enjoypadelapi.domain.Team;
 import com.example.enjoypadelapi.domain.Player;
 import com.example.enjoypadelapi.exception.FullMatchException;
 import com.example.enjoypadelapi.exception.MatchNotFoundException;
+import com.example.enjoypadelapi.exception.PlayerNotFoundException;
 import com.example.enjoypadelapi.exception.TeamNotFoundException;
 import com.example.enjoypadelapi.repository.MatchRepository;
 import com.example.enjoypadelapi.repository.TeamRepository;
@@ -12,8 +13,12 @@ import com.example.enjoypadelapi.repository.PlayerRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ReflectionUtils;
 
+import java.lang.reflect.Field;
 import java.util.List;
+import java.util.Map;
+
 @Service
 public class TeamServiceImpl implements TeamService {
 
@@ -73,6 +78,19 @@ public class TeamServiceImpl implements TeamService {
     }
 
     @Override
+    public Team partialTeamModification(long id, Map<Object, Object> fields) throws TeamNotFoundException {
+        Team team = teamRepository.findById(id)
+                .orElseThrow(()-> new TeamNotFoundException());
+        fields.forEach((k, v) -> {
+            Field field = ReflectionUtils.findField(Team.class, (String) k);
+            field.setAccessible(true);
+            ReflectionUtils.setField(field, team, v);
+        });
+        Team teamModified = modifyTeam(id, team);
+        return teamModified;
+    }
+
+    @Override
     public List<Player> listTeamPlayers(long id) throws TeamNotFoundException {
         Team team = teamRepository.findById(id)
                 .orElseThrow(()-> new TeamNotFoundException());
@@ -106,4 +124,6 @@ public class TeamServiceImpl implements TeamService {
         teamRepository.save(team);
         return match;
     }
+
+
 }

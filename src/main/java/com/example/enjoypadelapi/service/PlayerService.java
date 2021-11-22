@@ -9,6 +9,7 @@ import com.github.fge.jsonpatch.JsonPatch;
 import com.github.fge.jsonpatch.JsonPatchException;
 
 import java.util.List;
+import java.util.Map;
 
 public interface PlayerService {
     List<Player> findAll();
@@ -26,4 +27,6 @@ public interface PlayerService {
     Team deletePlayerToTeam(long player_id, long team_id) throws PlayerNotFoundException, TeamNotFoundException;
 
     Player modifyPlayer(long id, Player newPlayer) throws PlayerNotFoundException;
+
+    Player partialPlayerModification(long id, Map<Object, Object> fields) throws PlayerNotFoundException;
 }

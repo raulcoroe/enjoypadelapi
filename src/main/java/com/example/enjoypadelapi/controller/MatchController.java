@@ -1,6 +1,7 @@
 package com.example.enjoypadelapi.controller;
 
 import com.example.enjoypadelapi.domain.Match;
+import com.example.enjoypadelapi.domain.Player;
 import com.example.enjoypadelapi.domain.Team;
 import com.example.enjoypadelapi.exception.ErrorResponse;
 import com.example.enjoypadelapi.exception.MatchNotFoundException;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.rmi.MarshalException;
 import java.util.List;
+import java.util.Map;
+
 @RestController
 public class MatchController {
 
@@ -42,6 +45,12 @@ public class MatchController {
     @PutMapping("/match/{id}")
     public Match modifyMatch (@PathVariable long id, @RequestBody Match newMatch) throws MatchNotFoundException{
         Match match = matchService.modifyMatch(id, newMatch);
+        return match;
+    }
+
+    @PatchMapping("/match/{id}")
+    public Match partialMatchModification(@PathVariable long id, @RequestBody Map<Object, Object> fields) throws MatchNotFoundException {
+        Match match = matchService.partialMatchModification(id, fields);
         return match;
     }
 

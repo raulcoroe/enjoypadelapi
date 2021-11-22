@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
+
 @RestController
 public class TeamController {
 
@@ -47,6 +49,12 @@ public class TeamController {
         return team;
     }
 
+    @PatchMapping("/team/{id}")
+    public Team partialTeamModification (@PathVariable long id, @RequestBody Map<Object, Object> fields) throws TeamNotFoundException {
+        Team team = teamService.partialTeamModification(id, fields);
+        return team;
+    }
+
     @GetMapping("/team/{id}/players")
     public List<Player> listTeamPlayers(@PathVariable long id) throws TeamNotFoundException {
         List<Player> players = teamService.listTeamPlayers(id);
@@ -64,9 +72,6 @@ public class TeamController {
         Match match = teamService.deletePlayerToTeam(match_id, team_id);
         return match;
     }
-
-
-
 
     @ExceptionHandler(TeamNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleTeamNotFoundException(TeamNotFoundException tnfe) {

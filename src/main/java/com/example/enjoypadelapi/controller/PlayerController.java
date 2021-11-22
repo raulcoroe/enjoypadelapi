@@ -7,13 +7,13 @@ import com.example.enjoypadelapi.exception.FullTeamException;
 import com.example.enjoypadelapi.exception.TeamNotFoundException;
 import com.example.enjoypadelapi.exception.PlayerNotFoundException;
 import com.example.enjoypadelapi.service.PlayerService;
-import com.github.fge.jsonpatch.JsonPatch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class PlayerController {
@@ -48,6 +48,12 @@ public class PlayerController {
     @DeleteMapping("/player/{id}")
     public Player deletePlayer(@PathVariable long id) throws PlayerNotFoundException {
         Player player = playerService.deletePlayer(id);
+        return player;
+    }
+
+    @PatchMapping("/player/{id}")
+    public Player partialPlayerModification(@PathVariable long id, @RequestBody Map<Object, Object> fields) throws PlayerNotFoundException {
+        Player player = playerService.partialPlayerModification(id, fields);
         return player;
     }
 

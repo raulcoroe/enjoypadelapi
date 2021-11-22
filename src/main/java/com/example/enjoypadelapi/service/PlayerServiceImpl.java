@@ -13,8 +13,11 @@ import com.github.fge.jsonpatch.JsonPatchException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ReflectionUtils;
 
+import java.lang.reflect.Field;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class PlayerServiceImpl implements PlayerService {
@@ -61,6 +64,19 @@ public class PlayerServiceImpl implements PlayerService {
         player.setId(id);
         playerRepository.save(player);
         return player;
+    }
+
+    @Override
+    public Player partialPlayerModification(long id, Map<Object, Object> fields) throws PlayerNotFoundException {
+        Player player = playerRepository.findById(id)
+                .orElseThrow(() -> new PlayerNotFoundException());
+        fields.forEach((k, v) -> {
+            Field field = ReflectionUtils.findField(Player.class, (String) k);
+            field.setAccessible(true);
+            ReflectionUtils.setField(field, player, v);
+        });
+        Player playerModified = modifyPlayer(id, player);
+        return playerModified;
     }
 
     @Override

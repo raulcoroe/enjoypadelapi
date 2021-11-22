@@ -9,6 +9,7 @@ import com.example.enjoypadelapi.exception.PlayerNotFoundException;
 import com.example.enjoypadelapi.exception.TeamNotFoundException;
 
 import java.util.List;
+import java.util.Map;
 
 public interface TeamService {
     List<Team> findAll();
@@ -26,4 +27,6 @@ public interface TeamService {
     Team addTeamToMatch(long match_id, long team_id) throws TeamNotFoundException, MatchNotFoundException, FullMatchException;
 
     Match deletePlayerToTeam(long match_id, long team_id) throws TeamNotFoundException, MatchNotFoundException;
+
+    Team partialTeamModification(long id, Map<Object, Object> fields) throws TeamNotFoundException;
 }
