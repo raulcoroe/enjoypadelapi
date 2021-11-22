@@ -99,7 +99,7 @@ public class PlayerServiceImpl implements PlayerService {
         Player player = playerRepository.findById(id)
                 .orElseThrow(() -> new PlayerNotFoundException());
 
-        List<Team> teams = player.getTeams();
+        List<Team> teams = playerRepository.findByPlayer(player);
         return teams;
     }
 
