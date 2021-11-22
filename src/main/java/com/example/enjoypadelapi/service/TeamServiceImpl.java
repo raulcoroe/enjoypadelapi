@@ -104,7 +104,7 @@ public class TeamServiceImpl implements TeamService {
                 .orElseThrow(()->new TeamNotFoundException());
         Match match = matchRepository.findById(match_id)
                 .orElseThrow(()->new MatchNotFoundException());
-        if (match.getTeams().size() < 2){
+        if (match.getTeams().size() < 4){
             team.getMatches().add(match);
             teamRepository.save(team);
             return team;
