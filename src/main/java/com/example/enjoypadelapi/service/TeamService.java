@@ -1,18 +1,29 @@
 package com.example.enjoypadelapi.service;
 
+import com.example.enjoypadelapi.domain.Match;
+import com.example.enjoypadelapi.domain.Player;
 import com.example.enjoypadelapi.domain.Team;
-import com.example.enjoypadelapi.domain.User;
+import com.example.enjoypadelapi.exception.FullMatchException;
+import com.example.enjoypadelapi.exception.MatchNotFoundException;
+import com.example.enjoypadelapi.exception.PlayerNotFoundException;
 import com.example.enjoypadelapi.exception.TeamNotFoundException;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 public interface TeamService {
     List<Team> findAll();
-    Team findById(long id) throws TeamNotFoundException;
-    Team addTeam(Team newTeam);
-    Team deleteTeam(long id) throws TeamNotFoundException;
-    Team modifyTeam(long id, Team newTeam);
 
-    List<User> findTeamUsers(long id) throws TeamNotFoundException;
+    Team findById(long id) throws TeamNotFoundException;
+
+    Team addTeam(Team newTeam);
+
+    Team deleteTeam(long id) throws TeamNotFoundException, PlayerNotFoundException;
+
+    Team modifyTeam(long id, Team newTeam) throws TeamNotFoundException;
+
+    List<Player> listTeamPlayers(long id) throws TeamNotFoundException;
+
+    Team addTeamToMatch(long match_id, long team_id) throws TeamNotFoundException, MatchNotFoundException, FullMatchException;
+
+    Match deletePlayerToTeam(long match_id, long team_id) throws TeamNotFoundException, MatchNotFoundException;
 }

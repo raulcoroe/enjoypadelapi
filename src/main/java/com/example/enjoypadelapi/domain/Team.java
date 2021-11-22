@@ -20,16 +20,21 @@ public class Team {
     private long id;
     @Column
     private String name;
+    @Column
+    private boolean professional;
+    @Column
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    private LocalDate creationDate;
 
     @ManyToMany(mappedBy = "teams")
-    private List<User> users;
+    private List<Player> players;
 
     @JoinTable(
             name = "rel_teams_matches",
             joinColumns = @JoinColumn(name = "team_id"),
             inverseJoinColumns = @JoinColumn(name = "match_id")
     )
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JsonBackReference
     private List<Match> matches;
 }

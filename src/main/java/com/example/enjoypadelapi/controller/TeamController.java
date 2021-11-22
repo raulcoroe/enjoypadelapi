@@ -1,10 +1,13 @@
 package com.example.enjoypadelapi.controller;
 
+import com.example.enjoypadelapi.domain.Match;
 import com.example.enjoypadelapi.domain.Team;
-import com.example.enjoypadelapi.domain.User;
-import com.example.enjoypadelapi.exception.TeamNotFoundException;
+import com.example.enjoypadelapi.domain.Player;
+import com.example.enjoypadelapi.exception.*;
 import com.example.enjoypadelapi.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,15 +36,53 @@ public class TeamController {
     }
 
     @DeleteMapping("/team/{id}")
-    public Team deleteTeam(@PathVariable long id) throws TeamNotFoundException {
+    public Team deleteTeam(@PathVariable long id) throws TeamNotFoundException, PlayerNotFoundException {
         Team team = teamService.deleteTeam(id);
         return team;
     }
 
-    @GetMapping("/teamusers/{id}")
-    public List<User> findTeamUsers(@PathVariable long id) throws TeamNotFoundException {
-        List<User> users = teamService.findTeamUsers(id);
-        return users;
+    @PutMapping("/team/{id}")
+    public Team modifyTeam(@PathVariable long id, @RequestBody Team newTeam) throws TeamNotFoundException{
+        Team team = teamService.modifyTeam(id, newTeam);
+        return team;
     }
 
+    @GetMapping("/team/{id}/players")
+    public List<Player> listTeamPlayers(@PathVariable long id) throws TeamNotFoundException {
+        List<Player> players = teamService.listTeamPlayers(id);
+        return players;
+    }
+
+    @PostMapping("match/{match_id}/team/{team_id}")
+    public Team addTeamToMatch (@PathVariable long match_id, @PathVariable long team_id) throws TeamNotFoundException, MatchNotFoundException, FullMatchException {
+        Team team = teamService.addTeamToMatch(match_id, team_id);
+        return team;
+    }
+
+    @DeleteMapping("/match/{match_id}/team/{team_id}")
+    public Match deleteTeamToMatch(@PathVariable long match_id, @PathVariable long team_id) throws TeamNotFoundException, MatchNotFoundException {
+        Match match = teamService.deletePlayerToTeam(match_id, team_id);
+        return match;
+    }
+
+
+
+
+    @ExceptionHandler(TeamNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleTeamNotFoundException(TeamNotFoundException tnfe) {
+        ErrorResponse errorResponse = new ErrorResponse("404", tnfe.getMessage());
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(MatchNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleMatchNotFoundException(MatchNotFoundException mnfe) {
+        ErrorResponse errorResponse = new ErrorResponse("404", mnfe.getMessage());
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(FullMatchException.class)
+    public ResponseEntity<ErrorResponse> handleFullMatchException (FullMatchException fme) {
+        ErrorResponse errorResponse = new ErrorResponse("400", fme.getMessage());
+        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+    }
 }

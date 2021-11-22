@@ -14,8 +14,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 
-@Entity(name = "users")
-public class User {
+@Entity(name = "players")
+public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -23,15 +23,15 @@ public class User {
     private String name;
     @Column
     private String surname;
-    @Column(name = "user_score")
-    private long userScore;
+    @Column(name = "player_score")
+    private long playerScore;
     @Column(name = "birth_date")
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate birthDate;
 
     @JoinTable(
-            name = "rel_users_teams",
-            joinColumns = @JoinColumn(name = "user_id"),
+            name = "rel_players_teams",
+            joinColumns = @JoinColumn(name = "players_id"),
             inverseJoinColumns = @JoinColumn(name = "team_id")
     )
     @ManyToMany(cascade = CascadeType.ALL)
