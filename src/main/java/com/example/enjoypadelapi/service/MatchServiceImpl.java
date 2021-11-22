@@ -83,4 +83,12 @@ public class MatchServiceImpl implements  MatchService{
         Match matchModified = modifyMatch(id, match);
         return matchModified;
     }
+
+    @Override
+    public List<Team> listMatchTeams(long id) throws MatchNotFoundException {
+        Match match = matchRepository.findById(id)
+                .orElseThrow(()-> new MatchNotFoundException());
+        List<Team> teams = match.getTeams();
+        return teams;
+    }
 }

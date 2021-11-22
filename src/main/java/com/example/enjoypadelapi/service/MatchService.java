@@ -1,6 +1,7 @@
 package com.example.enjoypadelapi.service;
 
 import com.example.enjoypadelapi.domain.Match;
+import com.example.enjoypadelapi.domain.Team;
 import com.example.enjoypadelapi.exception.MatchNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -15,4 +16,6 @@ public interface MatchService {
     Match modifyMatch(long id, Match newMatch) throws MatchNotFoundException;
 
     Match partialMatchModification(long id, Map<Object, Object> fields) throws MatchNotFoundException;
+
+    List<Team> listMatchTeams(long id) throws MatchNotFoundException;
 }

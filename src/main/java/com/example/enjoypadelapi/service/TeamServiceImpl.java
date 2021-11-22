@@ -91,6 +91,14 @@ public class TeamServiceImpl implements TeamService {
     }
 
     @Override
+    public List<Match> listTeamMatches(long id) throws TeamNotFoundException {
+        Team team = teamRepository.findById(id)
+                .orElseThrow(()-> new TeamNotFoundException());
+        List<Match> matches = team.getMatches();
+        return matches;
+    }
+
+    @Override
     public List<Player> listTeamPlayers(long id) throws TeamNotFoundException {
         Team team = teamRepository.findById(id)
                 .orElseThrow(()-> new TeamNotFoundException());
