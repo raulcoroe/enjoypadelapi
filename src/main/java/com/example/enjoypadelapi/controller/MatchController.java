@@ -60,6 +60,12 @@ public class MatchController {
         return match;
     }
 
+    @GetMapping("/match/{id}/teams")
+    public List<Team> listMatchTeams(@PathVariable long id) throws MatchNotFoundException {
+        List<Team> teams = matchService.listMatchTeams(id);
+        return teams;
+    }
+
     @ExceptionHandler(MatchNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleMatchNotFoundException(MatchNotFoundException mnfe) {
         ErrorResponse errorResponse = new ErrorResponse("404", mnfe.getMessage());

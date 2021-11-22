@@ -4,6 +4,7 @@ import com.example.enjoypadelapi.domain.Match;
 import com.example.enjoypadelapi.domain.Team;
 import com.example.enjoypadelapi.domain.Player;
 import com.example.enjoypadelapi.exception.*;
+import com.example.enjoypadelapi.service.MatchService;
 import com.example.enjoypadelapi.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -72,6 +73,13 @@ public class TeamController {
         Match match = teamService.deletePlayerToTeam(match_id, team_id);
         return match;
     }
+
+    @GetMapping("/team/{id}/matches")
+    public List<Match> listTeamMatches (@PathVariable long id) {
+        List<Match> matches = teamService.listTeamMatches(id);
+        return matches;
+    }
+
 
     @ExceptionHandler(TeamNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleTeamNotFoundException(TeamNotFoundException tnfe) {

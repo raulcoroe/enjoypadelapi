@@ -29,4 +29,6 @@ public interface TeamService {
     Match deletePlayerToTeam(long match_id, long team_id) throws TeamNotFoundException, MatchNotFoundException;
 
     Team partialTeamModification(long id, Map<Object, Object> fields) throws TeamNotFoundException;
+
+    List<Match> listTeamMatches(long id) throws TeamNotFoundException;
 }
