@@ -10,5 +10,4 @@ import java.util.List;
 @Repository
 public interface PlayerRepository extends CrudRepository<Player, Long> {
     List<Player> findAll();
-    List<Team> findByPlayer(Player player);
 }

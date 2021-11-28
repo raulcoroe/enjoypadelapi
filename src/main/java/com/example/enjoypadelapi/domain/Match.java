@@ -36,5 +36,9 @@ public class Match {
     @ManyToMany(mappedBy = "matches")
     private List<Team> teams;
 
+    @ManyToOne
+    @JoinColumn(name = "court_id")
+    private Court court;
+
 }
 
