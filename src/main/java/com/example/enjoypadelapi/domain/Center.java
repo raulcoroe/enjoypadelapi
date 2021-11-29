@@ -30,6 +30,5 @@ public class Center {
 
     @ManyToOne
     @JoinColumn(name = "city")
-    @JsonBackReference
     private City city;
 }

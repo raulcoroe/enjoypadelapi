@@ -32,7 +32,7 @@ public class Court {
     private List<Match> matches;
 
     @ManyToOne
-    @JoinColumn (name = "sport_center")
+    @JoinColumn (name = "center_id")
     @JsonBackReference
     private Center center;
 }

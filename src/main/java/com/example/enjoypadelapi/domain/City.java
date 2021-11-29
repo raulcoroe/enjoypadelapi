@@ -1,5 +1,6 @@
 package com.example.enjoypadelapi.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,5 +24,6 @@ public class City {
     private String country;
 
     @OneToMany(mappedBy = "city")
+    @JsonIgnore
     private List<Center> centers;
 }

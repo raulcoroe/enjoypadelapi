@@ -19,7 +19,7 @@ import java.util.Map;
 public class PlayerController {
 
     @Autowired
-    PlayerService playerService;
+    private PlayerService playerService;
 
     @GetMapping("/players")
     public List<Player> findAll() {

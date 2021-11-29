@@ -3,10 +3,8 @@ package com.example.enjoypadelapi.controller;
 import com.example.enjoypadelapi.domain.Match;
 import com.example.enjoypadelapi.domain.Player;
 import com.example.enjoypadelapi.domain.Team;
-import com.example.enjoypadelapi.exception.ErrorResponse;
-import com.example.enjoypadelapi.exception.MatchNotFoundException;
-import com.example.enjoypadelapi.exception.PlayerNotFoundException;
-import com.example.enjoypadelapi.exception.TeamNotFoundException;
+import com.example.enjoypadelapi.domain.dto.MatchDTO;
+import com.example.enjoypadelapi.exception.*;
 import com.example.enjoypadelapi.service.MatchService;
 import com.example.enjoypadelapi.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +20,7 @@ import java.util.Map;
 public class MatchController {
 
     @Autowired
-    MatchService matchService;
+    private MatchService matchService;
 
     @GetMapping("/matches")
     public List<Match> findAll() {
@@ -37,8 +35,8 @@ public class MatchController {
     }
 
     @PostMapping("/matches")
-    public Match addTeam(@RequestBody Match newMatch){
-        Match match = matchService.addMatch(newMatch);
+    public Match addMatch(@RequestBody MatchDTO matchDto) throws CourtNotFoundException {
+        Match match = matchService.addMatch(matchDto);
         return match;
     }
 

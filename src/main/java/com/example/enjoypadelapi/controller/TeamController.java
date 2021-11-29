@@ -18,7 +18,7 @@ import java.util.Map;
 public class TeamController {
 
     @Autowired
-    TeamService teamService;
+    private TeamService teamService;
 
     @GetMapping("/teams")
     public List<Team> findAll() {

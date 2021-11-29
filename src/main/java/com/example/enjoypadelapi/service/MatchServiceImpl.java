@@ -1,10 +1,12 @@
 package com.example.enjoypadelapi.service;
 
+import com.example.enjoypadelapi.domain.Court;
 import com.example.enjoypadelapi.domain.Match;
-import com.example.enjoypadelapi.domain.Player;
 import com.example.enjoypadelapi.domain.Team;
+import com.example.enjoypadelapi.domain.dto.MatchDTO;
+import com.example.enjoypadelapi.exception.CourtNotFoundException;
 import com.example.enjoypadelapi.exception.MatchNotFoundException;
-import com.example.enjoypadelapi.exception.PlayerNotFoundException;
+import com.example.enjoypadelapi.repository.CourtRepository;
 import com.example.enjoypadelapi.repository.MatchRepository;
 import com.example.enjoypadelapi.repository.PlayerRepository;
 import com.example.enjoypadelapi.repository.TeamRepository;
@@ -21,13 +23,16 @@ import java.util.Map;
 public class MatchServiceImpl implements  MatchService{
 
     @Autowired
-    MatchRepository matchRepository;
+    private MatchRepository matchRepository;
 
     @Autowired
-    TeamRepository teamRepository;
+    private TeamRepository teamRepository;
 
     @Autowired
-    PlayerRepository playerRepository;
+    private PlayerRepository playerRepository;
+
+    @Autowired
+    private CourtRepository courtRepository;
 
     @Override
     public List<Match> findAll() {
@@ -43,8 +48,14 @@ public class MatchServiceImpl implements  MatchService{
     }
 
     @Override
-    public Match addMatch(Match newMatch) {
-        Match match = matchRepository.save(newMatch);
+    public Match addMatch(MatchDTO matchDto) throws CourtNotFoundException {
+        Court court = courtRepository.findById(matchDto.getCourt())
+                .orElseThrow(()-> new CourtNotFoundException());
+
+        ModelMapper mapper = new ModelMapper();
+        Match match = mapper.map(matchDto, Match.class);
+        match.setCourt(court);
+        matchRepository.save(match);
         return match;
     }
 
