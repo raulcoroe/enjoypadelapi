@@ -57,6 +57,12 @@ public class CourtController {
         return court;
     }
 
+    @GetMapping("/lighting/courts")
+    public List<Court> findLightingCourts (@RequestParam boolean lighting) {
+        List<Court> courts = courtService.findLightingCourts(lighting);
+        return courts;
+    }
+
 
     @ExceptionHandler(CourtNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleCourtNotFoundException(CourtNotFoundException cnfe) {

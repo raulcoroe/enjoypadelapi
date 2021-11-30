@@ -99,6 +99,11 @@ public class TeamServiceImpl implements TeamService {
     }
 
     @Override
+    public List<Team> findProfessionalTeams(boolean professional) {
+        return teamRepository.findProfessionalTeams(professional);
+    }
+
+    @Override
     public List<Player> listTeamPlayers(long id) throws TeamNotFoundException {
         Team team = teamRepository.findById(id)
                 .orElseThrow(()-> new TeamNotFoundException());

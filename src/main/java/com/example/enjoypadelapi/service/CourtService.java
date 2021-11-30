@@ -15,4 +15,6 @@ public interface CourtService {
     Court deleteCourt(long id) throws CourtNotFoundException;
     Court modifyCourt(long id, CourtDTO newCourt) throws CourtNotFoundException, CenterNotFoundException;
     Court partialCourtModification(long id, Map<Object, Object> fields) throws CourtNotFoundException;
+
+    List<Court> findLightingCourts(boolean lighting);
 }

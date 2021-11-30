@@ -34,7 +34,7 @@ public class CenterController {
         return center;
     }
 
-    @GetMapping("/filteredCenters")
+    @GetMapping("/filtered/centers")
     public List<Center> findFilteredCenters(@RequestParam(name = "capacity") int capacity,
                                             @RequestParam(name = "changingRooms") boolean changingRooms,
                                             @RequestParam(name = "subscriptionPrice") float subscriptionPrice) {

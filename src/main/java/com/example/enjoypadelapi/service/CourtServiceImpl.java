@@ -90,4 +90,9 @@ public class CourtServiceImpl implements CourtService {
         Court courtModified = courtRepository.save(court);
         return courtModified;
     }
+
+    @Override
+    public List<Court> findLightingCourts(boolean lighting) {
+        return courtRepository.findLightingCourts(lighting);
+    }
 }

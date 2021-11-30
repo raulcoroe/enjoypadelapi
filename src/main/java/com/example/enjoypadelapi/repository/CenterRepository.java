@@ -13,4 +13,5 @@ public interface CenterRepository extends CrudRepository<Center, Long> {
 
     @Query(value = "select * from \"center\" where (\"capacity\" >= :capacity AND \"changing_rooms\" = :changingRooms AND \"subscription_price\" < :subscriptionPrice)", nativeQuery = true)
     List<Center> findFilteredCenters(int capacity, boolean changingRooms, float subscriptionPrice);
+
 }

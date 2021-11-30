@@ -31,4 +31,6 @@ public interface TeamService {
     Team partialTeamModification(long id, Map<Object, Object> fields) throws TeamNotFoundException;
 
     List<Match> listTeamMatches(long id) throws TeamNotFoundException;
+
+    List<Team> findProfessionalTeams(boolean professional);
 }

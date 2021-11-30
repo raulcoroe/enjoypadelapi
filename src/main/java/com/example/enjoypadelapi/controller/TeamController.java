@@ -80,6 +80,12 @@ public class TeamController {
         return matches;
     }
 
+    @GetMapping("/professional/teams")
+    public List<Team> findProfessionalTeams (@RequestParam boolean professional) {
+        List<Team> teams = teamService.findProfessionalTeams(professional);
+        return teams;
+    }
+
 
     @ExceptionHandler(TeamNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleTeamNotFoundException(TeamNotFoundException tnfe) {
