@@ -7,6 +7,8 @@ import com.example.enjoypadelapi.exception.FullTeamException;
 import com.example.enjoypadelapi.exception.TeamNotFoundException;
 import com.example.enjoypadelapi.exception.PlayerNotFoundException;
 import com.example.enjoypadelapi.service.PlayerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,11 +20,14 @@ import java.util.Map;
 @RestController
 public class PlayerController {
 
+    private final Logger logger = LoggerFactory.getLogger(PlayerController.class);
+
     @Autowired
     private PlayerService playerService;
 
     @GetMapping("/players")
     public List<Player> findAll() {
+        logger.info("Inicio getPlayers");
         List<Player> players = playerService.findAll();
         return players;
     }
@@ -80,6 +85,7 @@ public class PlayerController {
     @ExceptionHandler(PlayerNotFoundException.class)
     public ResponseEntity<ErrorResponse> handlePlayerNotFoundException(PlayerNotFoundException pnfe) {
         ErrorResponse errorResponse = new ErrorResponse("404", pnfe.getMessage());
+        logger.error(pnfe.getMessage(), pnfe);
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
 

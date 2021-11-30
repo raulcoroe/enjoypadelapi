@@ -35,9 +35,9 @@ public class CenterController {
     }
 
     @GetMapping("/filtered/centers")
-    public List<Center> findFilteredCenters(@RequestParam(name = "capacity") int capacity,
+    public List<Center> findFilteredCenters(@RequestParam(name = "minCapacity") int capacity,
                                             @RequestParam(name = "changingRooms") boolean changingRooms,
-                                            @RequestParam(name = "subscriptionPrice") float subscriptionPrice) {
+                                            @RequestParam(name = "maxPrice") float subscriptionPrice) {
         List<Center> centers = centerService.findFilteredCenters(capacity, changingRooms, subscriptionPrice);
         return centers;
     }

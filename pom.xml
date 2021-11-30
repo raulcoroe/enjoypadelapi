@@ -60,10 +60,9 @@
 			<artifactId>junit-platform-commons</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-javadoc-plugin</artifactId>
-			<version>3.3.1</version>
-			<type>maven-plugin</type>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+			<version>2.6.0</version>
 		</dependency>
 	</dependencies>
 
