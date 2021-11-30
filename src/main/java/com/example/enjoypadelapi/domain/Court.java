@@ -28,11 +28,11 @@ public class Court {
     private String partner;
 
     @OneToMany (mappedBy = "court")
-    @JsonBackReference
+    @JsonBackReference (value = "court_matches")
     private List<Match> matches;
 
     @ManyToOne
     @JoinColumn (name = "center_id")
-    @JsonBackReference
+    @JsonBackReference (value = "court_center")
     private Center center;
 }

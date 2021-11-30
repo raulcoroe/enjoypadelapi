@@ -14,6 +14,6 @@ public class CourtDTO {
     private boolean lighting;
     private boolean glass;
     private String partner;
-    private long center_id;
+    private long center;
 }
 

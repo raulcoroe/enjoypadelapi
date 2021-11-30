@@ -16,4 +16,6 @@ public interface CenterService {
     Center modifyCenter(long id, CenterDTO newCenter) throws CenterNotFoundException, CityNotFoundException;
 
     Center partialCenterModification(long id, Map<Object, Object> fields) throws CenterNotFoundException, CityNotFoundException;
+
+    List<Center> findFilteredCenters(int capacity, boolean changingRooms, float subscriptionPrice);
 }

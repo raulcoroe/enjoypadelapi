@@ -34,6 +34,14 @@ public class CenterController {
         return center;
     }
 
+    @GetMapping("/filteredCenters")
+    public List<Center> findFilteredCenters(@RequestParam(name = "capacity") int capacity,
+                                            @RequestParam(name = "changingRooms") boolean changingRooms,
+                                            @RequestParam(name = "subscriptionPrice") float subscriptionPrice) {
+        List<Center> centers = centerService.findFilteredCenters(capacity, changingRooms, subscriptionPrice);
+        return centers;
+    }
+
     @PostMapping("/centers")
     public Center addCenter (@RequestBody CenterDTO centerDto) throws CityNotFoundException {
         Center center = centerService.addCenter(centerDto);

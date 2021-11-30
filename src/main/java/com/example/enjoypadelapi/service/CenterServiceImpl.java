@@ -80,9 +80,13 @@ public class CenterServiceImpl implements CenterService {
         ModelMapper mapper = new ModelMapper();
         Center center = mapper.map(centerDto, Center.class);
         center.setId(id);
-        City city = cityRepository.findById(centerDto.getCity())
-                        .orElseThrow(()-> new CityNotFoundException());
-        center.setCity(city);
+        if (centerDto.getCity() != 0) {
+            City city = cityRepository.findById(centerDto.getCity())
+                    .orElseThrow(() -> new CityNotFoundException());
+            center.setCity(city);
+        } else {
+            center.setCity(null);
+        }
         centerRepository.save(center);
         return center;
     }
@@ -100,5 +104,11 @@ public class CenterServiceImpl implements CenterService {
         });
         Center centerModified = centerRepository.save(center);
         return centerModified;
+    }
+
+    @Override
+    public List<Center> findFilteredCenters(int capacity, boolean changingRooms, float subscriptionPrice) {
+        List<Center> centers = centerRepository.findFilteredCenters(capacity, changingRooms, subscriptionPrice);
+        return centers;
     }
 }

@@ -72,12 +72,20 @@ public class MatchServiceImpl implements  MatchService{
     }
 
     @Override
-    public Match modifyMatch(long id, Match newMatch) throws MatchNotFoundException {
+    public Match modifyMatch(long id, MatchDTO matchDto) throws MatchNotFoundException, CourtNotFoundException {
         matchRepository.findById(id)
                 .orElseThrow(()->new MatchNotFoundException());
+
         ModelMapper mapper = new ModelMapper();
-        Match match = mapper.map(newMatch, Match.class);
+        Match match = mapper.map(matchDto, Match.class);
         match.setId(id);
+        if (matchDto.getCourt() != 0) {
+            Court court = courtRepository.findById(matchDto.getCourt())
+                    .orElseThrow(() -> new CourtNotFoundException());
+            match.setCourt(court);
+        } else {
+            match.setCourt(null);
+        }
         matchRepository.save(match);
         return match;
     }
@@ -91,7 +99,7 @@ public class MatchServiceImpl implements  MatchService{
             field.setAccessible(true);
             ReflectionUtils.setField(field, match, v);
         });
-        Match matchModified = modifyMatch(id, match);
+        Match matchModified = matchRepository.save(match);
         return matchModified;
     }
 

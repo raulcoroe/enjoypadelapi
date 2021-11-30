@@ -12,9 +12,9 @@ import java.util.Map;
 public interface MatchService {
     List<Match> findAll();
     Match findById(long id) throws MatchNotFoundException;
-    Match addMatch(MatchDTO newMatch) throws CourtNotFoundException;
+    Match addMatch(MatchDTO matchDto) throws CourtNotFoundException;
     Match deleteMatch(long id) throws MatchNotFoundException;
-    Match modifyMatch(long id, Match newMatch) throws MatchNotFoundException;
+    Match modifyMatch(long id, MatchDTO matchDto) throws MatchNotFoundException, CourtNotFoundException;
 
     Match partialMatchModification(long id, Map<Object, Object> fields) throws MatchNotFoundException;
 

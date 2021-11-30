@@ -3,6 +3,7 @@ package com.example.enjoypadelapi.controller;
 import com.example.enjoypadelapi.domain.Court;
 import com.example.enjoypadelapi.domain.Player;
 import com.example.enjoypadelapi.domain.Team;
+import com.example.enjoypadelapi.domain.dto.CourtDTO;
 import com.example.enjoypadelapi.exception.*;
 import com.example.enjoypadelapi.service.CourtService;
 import com.example.enjoypadelapi.service.PlayerService;
@@ -33,14 +34,14 @@ public class CourtController {
     }
 
     @PostMapping("/courts")
-    public Court addCourt(@RequestBody Court newCourt) {
-        Court court = courtService.addCourt(newCourt);
+    public Court addCourt(@RequestBody CourtDTO courtDto) throws CenterNotFoundException {
+        Court court = courtService.addCourt(courtDto);
         return court;
     }
 
     @PutMapping("/court/{id}")
-    public Court modifyCourt(@PathVariable long id, @RequestBody Court newCourt) throws CourtNotFoundException {
-        Court court = courtService.modifyCourt(id, newCourt);
+    public Court modifyCourt(@PathVariable long id, @RequestBody CourtDTO courtDto) throws CourtNotFoundException, CenterNotFoundException {
+        Court court = courtService.modifyCourt(id, courtDto);
         return court;
     }
 
@@ -60,6 +61,12 @@ public class CourtController {
     @ExceptionHandler(CourtNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleCourtNotFoundException(CourtNotFoundException cnfe) {
         ErrorResponse errorResponse = new ErrorResponse("404", cnfe.getMessage());
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(CenterNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleCenterNotFoundException(CenterNotFoundException cenfe) {
+        ErrorResponse errorResponse = new ErrorResponse("404", cenfe.getMessage());
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
 }

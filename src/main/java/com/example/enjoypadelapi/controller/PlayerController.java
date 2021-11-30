@@ -27,6 +27,7 @@ public class PlayerController {
         return players;
     }
 
+
     @GetMapping("/player/{id}")
     public Player findById(@PathVariable long id) throws PlayerNotFoundException {
         Player player = playerService.findById(id);

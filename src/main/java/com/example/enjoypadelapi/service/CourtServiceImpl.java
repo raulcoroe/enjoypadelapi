@@ -1,7 +1,11 @@
 package com.example.enjoypadelapi.service;
 
+import com.example.enjoypadelapi.domain.Center;
 import com.example.enjoypadelapi.domain.Court;
+import com.example.enjoypadelapi.domain.dto.CourtDTO;
+import com.example.enjoypadelapi.exception.CenterNotFoundException;
 import com.example.enjoypadelapi.exception.CourtNotFoundException;
+import com.example.enjoypadelapi.repository.CenterRepository;
 import com.example.enjoypadelapi.repository.CourtRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +20,10 @@ import java.util.Map;
 public class CourtServiceImpl implements CourtService {
 
     @Autowired
-    CourtRepository courtRepository;
+    private CourtRepository courtRepository;
+
+    @Autowired
+    private CenterRepository centerRepository;
 
     @Override
     public List<Court> findAll() {
@@ -32,9 +39,16 @@ public class CourtServiceImpl implements CourtService {
     }
 
     @Override
-    public Court addCourt (Court newCourt) {
-        Court court = courtRepository.save(newCourt);
-        return court;
+    public Court addCourt (CourtDTO courtDto) throws CenterNotFoundException {
+
+        ModelMapper mapper = new ModelMapper();
+        Court court = mapper.map(courtDto, Court.class);
+
+        Center center = centerRepository.findById(courtDto.getCenter())
+                .orElseThrow(() -> new CenterNotFoundException());
+        court.setCenter(center);
+
+        return courtRepository.save(court);
     }
 
     @Override
@@ -46,12 +60,20 @@ public class CourtServiceImpl implements CourtService {
     }
 
     @Override
-    public Court modifyCourt(long id, Court newCourt) throws CourtNotFoundException {
+    public Court modifyCourt(long id, CourtDTO courtDto) throws CourtNotFoundException, CenterNotFoundException {
         courtRepository.findById(id)
                 .orElseThrow(()->new CourtNotFoundException());
         ModelMapper mapper = new ModelMapper();
-        Court court = mapper.map(newCourt, Court.class);
+        Court court = mapper.map(courtDto, Court.class);
         court.setId(id);
+
+        if (courtDto.getCenter() != 0) {
+            Center center = centerRepository.findById(courtDto.getCenter())
+                    .orElseThrow(() -> new CenterNotFoundException());
+            court.setCenter(center);
+        } else {
+            court.setCenter(null);
+        }
         courtRepository.save(court);
         return court;
     }
@@ -65,7 +87,7 @@ public class CourtServiceImpl implements CourtService {
             field.setAccessible(true);
             ReflectionUtils.setField(field, court, v);
         });
-        Court courtModified = modifyCourt(id, court);
+        Court courtModified = courtRepository.save(court);
         return courtModified;
     }
 }

@@ -35,6 +35,6 @@ public class Team {
             inverseJoinColumns = @JoinColumn(name = "match_id")
     )
     @ManyToMany
-    @JsonBackReference
+    @JsonBackReference (value = "team_matches")
     private List<Match> matches;
 }

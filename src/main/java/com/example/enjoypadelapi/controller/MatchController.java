@@ -41,8 +41,8 @@ public class MatchController {
     }
 
     @PutMapping("/match/{id}")
-    public Match modifyMatch (@PathVariable long id, @RequestBody Match newMatch) throws MatchNotFoundException{
-        Match match = matchService.modifyMatch(id, newMatch);
+    public Match modifyMatch (@PathVariable long id, @RequestBody MatchDTO matchDto) throws MatchNotFoundException, CourtNotFoundException {
+        Match match = matchService.modifyMatch(id, matchDto);
         return match;
     }
 
@@ -67,6 +67,12 @@ public class MatchController {
     @ExceptionHandler(MatchNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleMatchNotFoundException(MatchNotFoundException mnfe) {
         ErrorResponse errorResponse = new ErrorResponse("404", mnfe.getMessage());
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(CourtNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleCourtNotFoundException(CourtNotFoundException cnfe) {
+        ErrorResponse errorResponse = new ErrorResponse("404", cnfe.getMessage());
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
 }
