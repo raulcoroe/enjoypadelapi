@@ -11,7 +11,7 @@
 ### - PATCH
 #### Todas las clases cuentan con un método PATCH que permite modificarlas manualmente
 ### - GITHUB
-#### El proyecto está subido en un repositorio github https://github.com/raulcoroe/enjoypadel
+#### El proyecto está subido en un repositorio github https://github.com/raulcoroe/enjoypadelapi
 ### - DTOs
 #### Se utilizan mapeos y DTOs para algunas de las operaciones de la aplicación
 ### - SQL Nativas
