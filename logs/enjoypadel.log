@@ -1372,5 +1372,179 @@ Using generated security password: 1d655f7d-13de-461f-977b-150c8c824bd4
 2021-12-09 16:59:42,801 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2021-12-09 16:59:42,802 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
 2021-12-09 16:59:42,804 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
-2021-12-09 16:59:42,833 INFO com.example.enjoypadelapi.controller.PlayerController [http-nio-8080-exec-1] Inicio getPlayers
-2021-12-09 16:59:51,068 INFO com.example.enjoypadelapi.controller.PlayerController [http-nio-8080-exec-4] Inicio getPlayers
+2021-12-09 16:59:42,833 INFO PlayerController [http-nio-8080-exec-1] Inicio getPlayers
+2021-12-09 16:59:51,068 INFO PlayerController [http-nio-8080-exec-4] Inicio getPlayers
+2021-12-09 17:03:12,291 INFO org.springframework.boot.StartupInfoLogger [main] Starting EnjoypadelapiApplication using Java 11.0.11 on Raul with PID 6164 (C:\Users\r_mar\IdeaProjects\enjoypadelapi\target\classes started by Raul in C:\Users\r_mar\IdeaProjects\enjoypadelapi)
+2021-12-09 17:03:12,293 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-12-09 17:03:12,693 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-09 17:03:12,744 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 44 ms. Found 6 JPA repository interfaces.
+2021-12-09 17:03:13,229 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2021-12-09 17:03:13,235 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-09 17:03:13,235 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-12-09 17:03:13,236 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-12-09 17:03:13,300 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-12-09 17:03:13,301 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 977 ms
+2021-12-09 17:03:13,321 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2021-12-09 17:03:13,413 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-12-09 17:03:13,417 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:C:/Users/r_mar/enjoypadelapi.db'
+2021-12-09 17:03:13,517 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-09 17:03:13,544 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-09 17:03:13,617 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-09 17:03:13,692 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-09 17:03:14,199 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-09 17:03:14,204 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-09 17:03:14,533 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-09 17:03:14,704 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2021-12-09 17:03:14,719 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-09 17:03:14,726 INFO org.springframework.boot.StartupInfoLogger [main] Started EnjoypadelapiApplication in 2.735 seconds (JVM running for 3.067)
+2021-12-09 17:03:21,284 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-09 17:03:21,285 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2021-12-09 17:03:21,286 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2021-12-09 17:12:58,982 INFO org.springframework.boot.StartupInfoLogger [main] Starting EnjoypadelapiApplication using Java 11.0.11 on Raul with PID 4376 (C:\Users\r_mar\IdeaProjects\enjoypadelapi\target\classes started by Raul in C:\Users\r_mar\IdeaProjects\enjoypadelapi)
+2021-12-09 17:12:58,984 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-12-09 17:12:59,400 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-09 17:12:59,453 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 46 ms. Found 6 JPA repository interfaces.
+2021-12-09 17:12:59,909 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2021-12-09 17:12:59,917 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-09 17:12:59,917 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-12-09 17:12:59,917 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-12-09 17:12:59,995 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-12-09 17:12:59,995 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 974 ms
+2021-12-09 17:13:00,026 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2021-12-09 17:13:00,124 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-12-09 17:13:00,127 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:C:/Users/r_mar/enjoypadelapi.db'
+2021-12-09 17:13:00,220 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-09 17:13:00,249 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-09 17:13:00,318 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-09 17:13:00,378 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-09 17:13:00,819 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-09 17:13:00,826 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-09 17:13:01,051 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-09 17:13:01,214 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2021-12-09 17:13:01,227 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-09 17:13:01,233 INFO org.springframework.boot.StartupInfoLogger [main] Started EnjoypadelapiApplication in 2.578 seconds (JVM running for 2.87)
+2021-12-09 17:38:00,507 INFO org.springframework.boot.StartupInfoLogger [main] Starting EnjoypadelapiApplication using Java 11.0.11 on Raul with PID 1544 (C:\Users\r_mar\IdeaProjects\enjoypadelapi\target\classes started by Raul in C:\Users\r_mar\IdeaProjects\enjoypadelapi)
+2021-12-09 17:38:00,509 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-12-09 17:38:00,897 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-09 17:38:00,946 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 43 ms. Found 6 JPA repository interfaces.
+2021-12-09 17:38:01,413 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2021-12-09 17:38:01,420 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-09 17:38:01,421 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-12-09 17:38:01,421 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-12-09 17:38:01,490 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-12-09 17:38:01,490 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 950 ms
+2021-12-09 17:38:01,509 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2021-12-09 17:38:01,600 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-12-09 17:38:01,604 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:C:/Users/r_mar/enjoypadelapi.db'
+2021-12-09 17:38:01,685 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-09 17:38:01,710 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-09 17:38:01,779 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-09 17:38:01,837 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-09 17:38:02,297 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-09 17:38:02,307 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-09 17:38:02,664 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-09 17:38:02,849 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2021-12-09 17:38:02,879 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-09 17:38:02,888 INFO org.springframework.boot.StartupInfoLogger [main] Started EnjoypadelapiApplication in 2.684 seconds (JVM running for 2.967)
+2021-12-09 17:38:05,160 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-09 17:38:05,161 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2021-12-09 17:38:05,162 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2021-12-09 18:17:21,757 INFO org.springframework.boot.StartupInfoLogger [main] Starting EnjoypadelapiApplication using Java 11.0.11 on Raul with PID 8 (C:\Users\r_mar\IdeaProjects\enjoypadelapi\target\classes started by Raul in C:\Users\r_mar\IdeaProjects\enjoypadelapi)
+2021-12-09 18:17:21,759 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-12-09 18:17:22,207 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-09 18:17:22,256 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 43 ms. Found 6 JPA repository interfaces.
+2021-12-09 18:17:22,719 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2021-12-09 18:17:22,726 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-09 18:17:22,727 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-12-09 18:17:22,727 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-12-09 18:17:22,791 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-12-09 18:17:22,792 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1001 ms
+2021-12-09 18:17:22,811 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2021-12-09 18:17:22,911 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-12-09 18:17:22,915 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:C:/Users/r_mar/enjoypadelapi.db'
+2021-12-09 18:17:23,002 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-09 18:17:23,028 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-09 18:17:23,108 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-09 18:17:23,177 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-09 18:17:23,604 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-09 18:17:23,610 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-09 18:17:23,822 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-09 18:17:23,984 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2021-12-09 18:17:23,997 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-09 18:17:24,004 INFO org.springframework.boot.StartupInfoLogger [main] Started EnjoypadelapiApplication in 2.549 seconds (JVM running for 2.829)
+2021-12-09 18:17:26,579 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-09 18:17:26,580 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2021-12-09 18:17:26,581 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2021-12-09 18:17:26,603 INFO com.martin.enjoypadelapi.controller.TeamController [http-nio-8080-exec-2] Inicio findAllTeams
+2021-12-09 18:17:26,750 INFO com.martin.enjoypadelapi.controller.TeamController [http-nio-8080-exec-2] Final findAllTeams
+2021-12-09 18:17:35,677 INFO com.martin.enjoypadelapi.controller.TeamController [http-nio-8080-exec-3] Inicio findAllTeams
+2021-12-09 18:17:35,679 INFO com.martin.enjoypadelapi.controller.TeamController [http-nio-8080-exec-3] Final findAllTeams
+2021-12-09 18:17:41,126 INFO com.martin.enjoypadelapi.controller.CenterController [http-nio-8080-exec-4] Inicio addCenter
+2021-12-09 18:17:41,186 ERROR com.martin.enjoypadelapi.controller.CenterController [http-nio-8080-exec-4] City not found
+com.martin.enjoypadelapi.exception.CityNotFoundException: City not found
+	at com.martin.enjoypadelapi.service.CenterServiceImpl.lambda$addCenter$1(CenterServiceImpl.java:55)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:408)
+	at com.martin.enjoypadelapi.service.CenterServiceImpl.addCenter(CenterServiceImpl.java:55)
+	at com.martin.enjoypadelapi.controller.CenterController.addCenter(CenterController.java:56)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-12-09 18:17:53,395 INFO com.martin.enjoypadelapi.controller.CityController [http-nio-8080-exec-5] Inicio addCity
+2021-12-09 18:17:53,433 INFO com.martin.enjoypadelapi.controller.CityController [http-nio-8080-exec-5] Final addCity
+2021-12-09 18:17:57,497 INFO com.martin.enjoypadelapi.controller.CenterController [http-nio-8080-exec-6] Inicio addCenter
+2021-12-09 18:17:57,513 INFO com.martin.enjoypadelapi.controller.CenterController [http-nio-8080-exec-6] Final addCenter
+2021-12-09 18:18:12,852 INFO com.martin.enjoypadelapi.controller.CenterController [http-nio-8080-exec-7] Inicio findFilteredCenters
+2021-12-09 18:18:12,884 INFO com.martin.enjoypadelapi.controller.CenterController [http-nio-8080-exec-7] Final findFilteredCenters
+2021-12-09 18:18:39,740 INFO com.martin.enjoypadelapi.controller.CourtController [http-nio-8080-exec-8] Inicio findLighting courts
+2021-12-09 18:18:39,743 INFO com.martin.enjoypadelapi.controller.CourtController [http-nio-8080-exec-8] Final findLighting courts
+2021-12-09 18:18:42,750 INFO com.martin.enjoypadelapi.controller.CourtController [http-nio-8080-exec-9] Inicio addCourt
+2021-12-09 18:18:42,760 INFO com.martin.enjoypadelapi.controller.CourtController [http-nio-8080-exec-9] Final addCourt
+2021-12-09 18:18:46,557 INFO com.martin.enjoypadelapi.controller.CourtController [http-nio-8080-exec-10] Inicio findLighting courts
+2021-12-09 18:18:46,558 INFO com.martin.enjoypadelapi.controller.CourtController [http-nio-8080-exec-10] Final findLighting courts
