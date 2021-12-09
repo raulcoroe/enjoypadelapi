@@ -93,7 +93,7 @@ public class CenterServiceImpl implements CenterService {
 
 
     @Override
-    public Center partialCenterModification(long id, Map<Object, Object> fields) throws CenterNotFoundException, CityNotFoundException {
+    public Center partialCenterModification(long id, Map<Object, Object> fields) throws CenterNotFoundException {
         Center center = centerRepository.findById(id)
                 .orElseThrow(()-> new CenterNotFoundException());
 
