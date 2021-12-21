@@ -82,7 +82,7 @@ public class PlayerController {
         return team;
     }
 
-    @GetMapping("player/{id}/teams")
+    @GetMapping("/player/{id}/teams")
     public List<Team> listPlayerTeams(@PathVariable long id) throws PlayerNotFoundException {
         logger.info("Inicio listPlayerTeams");
         List<Team> teams = playerService.listPlayerTeams(id);
