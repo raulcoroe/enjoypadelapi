@@ -17,7 +17,7 @@ import java.util.Map;
 @RestController
 public class CityController {
 
-    private final Logger logger = LoggerFactory.getLogger(PlayerController.class);
+    private final Logger logger = LoggerFactory.getLogger(CityController.class);
 
     @Autowired
     private CityService cityService;

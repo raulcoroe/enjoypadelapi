@@ -21,7 +21,7 @@ import java.util.Map;
 @RestController
 public class MatchController {
 
-    private final Logger logger = LoggerFactory.getLogger(PlayerController.class);
+    private final Logger logger = LoggerFactory.getLogger(MatchController.class);
 
     @Autowired
     private MatchService matchService;

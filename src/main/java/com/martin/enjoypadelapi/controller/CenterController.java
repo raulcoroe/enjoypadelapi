@@ -19,7 +19,7 @@ import java.util.Map;
 @RestController
 public class CenterController {
 
-    private final Logger logger = LoggerFactory.getLogger(PlayerController.class);
+    private final Logger logger = LoggerFactory.getLogger(CenterController.class);
 
     @Autowired
     private CenterService centerService;

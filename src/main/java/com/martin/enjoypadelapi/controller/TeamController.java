@@ -18,7 +18,7 @@ import java.util.Map;
 @RestController
 public class TeamController {
 
-    private final Logger logger = LoggerFactory.getLogger(PlayerController.class);
+    private final Logger logger = LoggerFactory.getLogger(TeamController.class);
 
     @Autowired
     private TeamService teamService;

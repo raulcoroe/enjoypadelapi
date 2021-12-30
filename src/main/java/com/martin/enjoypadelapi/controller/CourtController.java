@@ -18,7 +18,7 @@ import java.util.Map;
 @RestController
 public class CourtController {
 
-    private final Logger logger = LoggerFactory.getLogger(PlayerController.class);
+    private final Logger logger = LoggerFactory.getLogger(CourtController.class);
 
     @Autowired
     private CourtService courtService;
